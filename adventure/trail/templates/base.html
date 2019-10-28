@@ -1,0 +1,34 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Adventure {%  endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+
+</head>
+<body>
+
+    <nav>
+         <ul>
+             <li><a href="http://127.0.0.1:8000"> Home </a></li>
+             <li><a href="#"> Ostatnio dodane </a></li>
+             <li><a href="http://127.0.0.1:8000/user_create"> Użytkownicy </a></li>
+             <li><a href="http://127.0.0.1:8000/add_trail"> Dodaj swoją trasę </a></li>
+             <li><a href="http://127.0.0.1:8000/contact"> Kontakt </a></li>
+         </ul>
+
+    </nav>
+    <img  id="banner" src="{% static "pictures/main.jpg" %}">
+        {% block content %}
+        {% endblock %}
+</body>
+</html>
+
+
+
+
+
+
+

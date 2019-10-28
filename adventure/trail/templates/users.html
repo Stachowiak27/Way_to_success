@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Adventure {% endblock %}
+{% block content %}
+ <html>
+ <head>
+     <link rel="stylesheet" href="base.html">
+ </head>
+  <body>
+    Użytkownicy:
+
+    <ul>
+        {% for user in users %}
+            {{ users.username }}
+
+        {%  endfor %}
+
+    </ul>
+
+
+
+
+
+  </body>
+</html>
+      {% endblock %}

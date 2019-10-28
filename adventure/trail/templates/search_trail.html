@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Adventure {% endblock %}
+{% block content %}
+ <html>
+ <head>
+     <link rel="stylesheet" href="base.html">
+ </head>
+  <body>
+        <h1> Trasy wybrane dla Ciebie: </h1>
+
+        <ul>
+            {%  for trail in trail_list %}
+            <li>
+                <strong><a href="{% url "trail-view" trail.id %}"> Nazwa: {{ trail.name }}</a></strong><br>
+                Jak ją pokonasz: {{ trail.get_type_tour_display }}<br>
+                Przewidywany czas: {{ trail.time_tour }} godzin<br>
+                Trudność: {{ trail.get_difficulty_display }}<br>
+                Dystans:{{ trail.distance }} km<br>
+                Opis:"{{ trail.description }}"
+            </li>
+            {%  endfor %}
+        </ul>
+  </body>
+</html>
+      {% endblock %}

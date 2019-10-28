@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Adventure {% endblock %}
+{% block content %}
+ <html>
+ <head>
+     <link rel="stylesheet" href="base.html">
+ </head>
+  <body>
+        <h1> Twój wybór: </h1>
+        <ul>
+            <li>
+                <strong> Nazwa: {{ object.name }} </strong><br>
+                Jak ją pokonasz: {{ object.get_type_tour_display }}<br>
+                Przewidywany czas: {{ object.time_tour }} godzin<br>
+                Trudność: {{ object.get_difficulty_display }}<br>
+                Dystans:{{ object.distance }} km<br>
+                Opis:"{{ object.description }}"
+                <img src="{{ object.photo.url }}">
+            </li>
+        </ul>
+  </body>
+</html>
+      {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Adventure {% endblock %}
+{% block content %}
+ <html>
+ <head>
+     <link rel="stylesheet" href="base.html">
+ </head>
+  <body>
+    Wyszukaj trasy dla siebie:
+
+
+    <form action="{% url "search-trail" %}" method="get">
+        <ul>
+        <li><input type="text" name="trail_name" value="" placeholder="WPISZ NAZWĘ TRASY"></li>
+            <li><input id="pieszo" type="radio" name="trail" value="1">
+        <label for="pieszo"> Pieszo </label></li>
+        <li><input id="rowerem" type="radio" name="trail" value="2">
+        <label for="rowerem"> Rowerem </label></li>
+        <li>   Stopień trudności:
+        <select name="trail_difficulty">
+            <option value=""></option>
+            <option value="1">Bardzo łatwa</option>
+            <option value="2">Łatwa</option>
+            <option value="3">Średnio trudna</option>
+            <option value="4">Trudna</option>
+            <option value="5">Dla wytrwałych</option>
+        </select></li>
+            <li>Ile masz czasu?:
+            <input type="number" name="trail_time"></li>
+
+            </ul>
+
+
+        <button type="submit">Wyszukaj</button>
+    </form>
+
+  <img id="home" src= "{% static "pictures/IMG_20190917_163239.jpg" %}">
+  </body>
+</html>
+      {% endblock %}
